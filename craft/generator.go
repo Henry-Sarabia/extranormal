@@ -4,6 +4,7 @@ import (
 	"github.com/Henry-Sarabia/extranormal"
 	"github.com/Henry-Sarabia/placeholder"
 	"github.com/pkg/errors"
+	uuid "github.com/satori/go.uuid"
 	"time"
 )
 
@@ -23,7 +24,13 @@ func (g *Generator) Item() (*extranormal.Item, error) {
 		return nil, errors.Wrap(err, "generator cannot get new item")
 	}
 
+	id, err := uuid.NewV4()
+	if err != nil {
+		return nil, errors.Wrap(err, "cannot generate uuid")
+	}
+
 	return &extranormal.Item{
+		ID:          id.String(),
 		Name:        i.Name,
 		Class:       i.Class,
 		Value:       i.Value,
