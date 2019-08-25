@@ -1,0 +1,203 @@
+[
+    {
+        "name": "art",
+        "configurations":[
+            {
+                "name": "shaped",
+                "format": "<article> <material> <name> <verb> <article> <shape>",
+                "template": "{{.Article}} {{.Material}} {{.Name}} {{.Verb}} {{.Article}} {{.Shape}}",
+                "example": "<an> <ironwood> <statue> <crafted in the likeness of> <an> <eagle>",
+                "verb_variants":[
+                    "crafted like",
+                    "crafted in the likeness of",
+                    "crafted to look like",
+                    "crafted to resemble",
+                    "crafted in the form of",
+                    "made in the likeness of",
+                    "made to look like",
+                    "made to resemble",
+                    "made in the form of",
+                    "built like",
+                    "built in the likeness of",
+                    "built to look like",
+                    "built to resemble",
+                    "designed like",
+                    "designed to look like",
+                    "designed to resemble",
+                    "shaped like",
+                    "shaped to look like",
+                    "shaped to resemble",
+                    "fashioned in the likeness of",
+                    "fashioned to look like",
+                    "fashioned after",
+                    "resembling",
+                    "cast in the form of",
+                    "in the form of"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "drink",
+        "configurations":[
+            {
+                "name": "simple",
+                "format": "<article> <name> <verb> <material>",
+                "example": "<a> <completely cracked> <drinking horn> <made from> <ivory>",
+                "verb_variants":[
+                    "made of",
+                    "made out of",
+                    "made from",
+                    "built out of",
+                    "crafted out of",
+                    "fashioned out of"
+                ]
+            },
+            {
+                "name": "filled",
+                "format": "<article> <material> <name> <verb> <contents>",
+                "example": "<a> <calf leather> <wineskin> <half full of> <mulled ale>",
+                "verb_variants":[
+                    "filled with",
+                    "full of",
+                    "nearly filled with",
+                    "nearly full of",
+                    "half full of",
+                    "half filled with",
+                    "containing",
+                    "barely containing some",
+                    "faintly smelling of",
+                    "with a bit of remaining",
+                    "filled with the dregs of"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "jewelry",
+        "configurations":[
+            {
+                "name": "simple",
+                "format": "<article> <name> <verb> <material>",
+                "example": "<a> <slightly rusted> <necklace> <made of> <bronze>",
+                "verb_variants":[
+                    "made of",
+                    "made out of",
+                    "made from",
+                    "of",
+                    "built out of",
+                    "crafted out of",
+                    "fashioned out of"
+                ]
+            },
+            {
+                "name": "encrusted",
+                "format": "<article> <material> <name> <verb> <gemstone>",
+                "example": "<a> <rose gold> <wedding ring> <studded with> <rubies>",
+                "verb_variants":[
+                    "set with",
+                    "studded with",
+                    "studded in",
+                    "covered with",
+                    "covered in",
+                    "speckled with",
+                    "encrusted with",
+                    "encrusted in",
+                    "embellished with",
+                    "decorated with"
+                ]
+            },
+            {
+                "name": "engraved",
+                "format": "<article> <material> <name> <verb> <language> <inscription>",
+                "example": "<a> <rose gold> <wedding ring> <adorned with> <elven> <engravings>",
+                "verb_variants":[
+                    "with",
+                    "inscribed with",
+                    "adorned with",
+                    "embellished with",
+                    "decorated with",
+                    "designed with",
+                    "engraved with",
+                    "with hints of"
+                ]
+            },
+            {
+                "name": "ornamented",
+                "format": "<article> <material> <name> <verb> <article> <gemstone> <ornament>",
+                "example": "<a> <well crafted> <brass> <necklace> <adorned with> <an> <emerald> <locket>",
+                "verb_variants":[
+                    "with",
+                    "adorned with",
+                    "decorated with",
+                    "embellished with",
+                    "fashioned with",
+                    "designed with"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "instrument",
+        "configurations":[
+            {
+                "name": "simple",
+                "format": "<article> <name> <verb> <material>",
+                "example": "<a> <bent> <flute> <made of> <silver>",
+                "verb_variants":[
+                    "made of",
+                    "made out of",
+                    "made from",
+                    "built out of",
+                    "crafted out of",
+                    "fashioned out of"
+                ]
+            },
+            {
+                "name": "engraved",
+                "format": "<article> <material> <name> <verb> <language> <inscription>",
+                "example": "<an> <expertly crafted> <silver> <harmonica> <decorated with> <infernal> <runes>",
+                "verb_variants":[
+                    "inscribed with",
+                    "adorned with",
+                    "embellished with",
+                    "decorated with",
+                    "designed with",
+                    "engraved with",
+                    "with hints of"
+                ]
+            }
+        ]
+    },
+    {
+        "name": "container",
+        "configurations":[
+            {
+                "name": "simple",
+                "format": "<article> <name> <verb> <material>",
+                "example": "<a> <heavily charred> <box> <built from> <elm wood>",
+                "verb_variants":[
+                    "made of",
+                    "made out of",
+                    "made from",
+                    "built out of",
+                    "built from",
+                    "crafted out of",
+                    "fashioned out of"
+                ]
+            },
+            {
+                "name": "filled",
+                "format": "<article> <material> <name> <verb> <content>",
+                "example": "<a> <scratched> <rosewood> <cigar box> <filled with> <finger bones>",
+                "verb_variants":[
+                    "filled with",
+                    "full of",
+                    "containing",
+                    "enclosed with",
+                    "holding"
+                ]
+            }
+        ]
+    }
+]

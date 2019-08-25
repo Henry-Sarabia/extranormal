@@ -4,7 +4,8 @@ import (
 	"github.com/Henry-Sarabia/extranormal"
 	"github.com/Henry-Sarabia/placeholder"
 	"github.com/pkg/errors"
-	uuid "github.com/satori/go.uuid"
+	"github.com/satori/go.uuid"
+	"log"
 	"time"
 )
 
@@ -13,8 +14,13 @@ type Generator struct {
 }
 
 func NewGenerator() *Generator {
+	c, err := placeholder.NewFromFiles([]string{"craft/assets/templates.json"}, []string{"craft/assets/classes.json"}, []string{"craft/assets/details.json", "craft/assets/materials.json", "craft/assets/qualities.json"})
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	return &Generator{
-		gen: &placeholder.Crafter{},
+		gen: c,
 	}
 }
 

@@ -1,0 +1,445 @@
+[
+  {
+    "name": "figurine",
+    "item_class": "art",
+    "base_value": 10,
+    "base_weight": 1,
+    "configurations":[
+      "shaped"
+    ],
+    "aliases":[
+      "figurine",
+      "figure",
+      "statuette",
+      "effigy",
+      "idol"
+    ],
+    "detail_references": [
+      {
+        "label": "material",
+        "variants":[
+          "precious metal",
+          "base metal",
+          "ivory",
+          "bone",
+          "wood",
+          "gem",
+          "stone"
+        ]
+      },
+      {
+        "label": "shape",
+        "variants":[
+          "beast",
+          "monstrosity",
+          "humanoid"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "wineskin",
+    "item_class": "drink",
+    "base_value": 0.5,
+    "base_weight": 0.5,
+    "configurations":[
+      "filled"
+    ],
+    "aliases":[
+      "wineskin",
+      "waterskin",
+      "bota bag",
+      "colambre",
+      "canteen"
+    ],
+    "detail_references": [
+      {
+        "label": "material",
+        "variants":[
+          "leather",
+          "animal skin"
+        ]
+      },
+      {
+        "label": "contents",
+        "variants":[
+          "water",
+          "tea",
+          "wine",
+          "mead",
+          "ale",
+          "beer",
+          "cider"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "flask",
+    "item_class": "drink",
+    "base_value": 1,
+    "base_weight": 0.2,
+    "configurations":[
+      "filled"
+    ],
+    "aliases":[
+      "flask",
+      "hip flask",
+      "kidney flask",
+      "decanter",
+      "canteen"
+    ],
+    "detail_references": [
+      {
+        "label": "material",
+        "variants":[
+          "base metal",
+          "precious metal"
+        ]
+      },
+      {
+        "label": "contents",
+        "variants":[
+          "water",
+          "tea",
+          "wine",
+          "mead",
+          "ale",
+          "beer",
+          "cider"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "drinking horn",
+    "item_class": "drink",
+    "base_value": 2,
+    "base_weight": 0.5,
+    "configurations":[
+      "filled"
+    ],
+    "aliases":[
+      "drinking horn"
+    ],
+    "detail_references":[
+      {
+        "label": "material",
+        "variants":[
+          "ivory",
+          "bone"
+        ]
+      },
+      {
+        "label": "contents",
+        "variants":[
+          "water",
+          "tea",
+          "wine",
+          "mead",
+          "milk",
+          "ale",
+          "beer",
+          "cider"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "tankard",
+    "item_class": "drink",
+    "base_value": 0.5,
+    "base_weight": 0.4,
+    "configurations":[
+      "filled"
+    ],
+    "aliases":[
+      "tankard",
+      "stein",
+      "cup",
+      "mug",
+      "flagon"
+    ],
+    "detail_references": [
+      {
+        "label": "material",
+        "variants":[
+          "base metal",
+          "wood",
+          "ivory",
+          "precious metal",
+          "stone"
+        ]
+      },
+      {
+        "label": "contents",
+        "variants":[
+          "water",
+          "tea",
+          "wine",
+          "mead",
+          "milk",
+          "ale",
+          "beer",
+          "cider"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "ring",
+    "item_class": "jewelry",
+    "base_value": 3,
+    "base_weight": 0.01,
+    "configurations":[
+      "simple",
+      "encrusted",
+      "engraved"
+    ],
+    "aliases":[
+      "ring",
+      "memorial ring",
+      "wedding ring",
+      "wedding band",
+      "promise ring",
+      "signet ring",
+      "thumb ring"
+    ],
+    "detail_references": [
+      {
+        "label": "material",
+        "variants":[
+          "precious metal",
+          "base metal",
+          "wood",
+          "ivory",
+          "bone"
+        ]
+      },
+      {
+        "label": "gemstone",
+        "variants":[
+          "gemstone"
+        ]
+      },
+      {
+        "label": "language",
+        "variants":[
+          "language"
+        ]
+      },
+      {
+        "label": "inscription",
+        "variants":[
+          "inscription"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "bracelet",
+    "item_class": "jewelry",
+    "base_value": 5,
+    "base_weight": 0.05,
+    "configurations":[
+      "simple",
+      "encrusted",
+      "engraved",
+      "ornamented"
+    ],
+    "aliases":[
+      "bracelet",
+      "bangle",
+      "bangle bracelet",
+      "link bracelet",
+      "friendship bracelet",
+      "ornamental bracelet",
+      "wristlet",
+      "ankle bracelet",
+      "anklet"
+    ],
+    "detail_references": [
+      {
+        "label": "material",
+        "variants":[
+          "precious metal",
+          "base metal",
+          "leather",
+          "ivory"
+        ]
+      },
+      {
+        "label": "gemstone",
+        "variants":[
+          "gemstone"
+        ]
+      },
+      {
+        "label": "language",
+        "variants":[
+          "language"
+        ]
+      },
+      {
+        "label": "inscription",
+        "variants":[
+          "inscription"
+        ]
+      },
+      {
+        "label": "ornament",
+        "variants":[
+          "ornament"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "necklace",
+    "item_class": "jewelry",
+    "base_value": 10,
+    "base_weight": 0.05,
+    "configurations":[
+      "simple",
+      "encrusted",
+      "ornamented"
+    ],
+    "aliases":[
+      "necklace",
+      "choker",
+      "princess necklace",
+      "matinee necklace",
+      "opera necklace",
+      "lariat necklace"
+    ],
+    "detail_references": [
+      {
+        "label": "material",
+        "variants":[
+          "precious metal",
+          "base metal",
+          "ivory"
+        ]
+      },
+      {
+        "label": "gemstone",
+        "variants":[
+          "gemstone"
+        ]
+      },
+      {
+        "label": "ornament",
+        "variants":[
+          "ornament"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "doll",
+    "item_class": "art",
+    "base_value": 0.2,
+    "base_weight": 0.3,
+    "configurations":[
+      "shaped"
+    ],
+    "aliases":[
+      "doll",
+      "toy puppet",
+      "toy figurine"
+    ],
+    "detail_references": [
+      {
+        "label": "material",
+        "variants":[
+          "cloth",
+          "wood"
+        ]
+      },
+      {
+        "label": "shape",
+        "variants":[
+          "beast",
+          "humanoid"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "harmonica",
+    "item_class": "instrument",
+    "base_value": 5,
+    "base_weight": 0.2,
+    "configurations":[
+      "engraved"
+    ],
+    "aliases":[
+      "harmonica",
+      "french harp",
+      "mouth organ",
+      "pitch pipe"
+    ],
+    "detail_references":[
+      {
+        "label": "material",
+        "variants":[
+          "base metal",
+          "precious metal",
+          "wood"
+        ]
+      },
+      {
+        "label": "language",
+        "variants":[
+          "language"
+        ]
+      },
+      {
+        "label": "inscription",
+        "variants":[
+          "inscription"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "flute",
+    "item_class": "instrument",
+    "base_value": 10,
+    "base_weight": 0.4,
+    "configurations":[
+      "engraved"
+    ],
+    "aliases":[
+      "flute",
+      "alto flute",
+      "oboe",
+      "clarinet",
+      "recorder",
+      "pipe",
+      "shawm"
+    ],
+    "detail_references":[
+      {
+        "label": "material",
+        "variants":[
+          "wood",
+          "ivory",
+          "precious metal"
+        ]
+      },
+      {
+        "label": "language",
+        "variants":[
+          "language"
+        ]
+      },
+      {
+        "label": "inscription",
+        "variants":[
+          "inscription"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,415 @@
+[
+    {
+        "name": "water",
+        "minor_value_factor": 1,
+        "minor_value_details":[
+            "dirty water",
+            "salt water",
+            "sea water"
+        ],
+        "avg_value_factor": 1.1,
+        "avg_value_details":[
+            "clean water",
+            "purified water"
+        ],
+        "major_value_factor": 1.2,
+        "major_value_details":[
+            "sage water",
+            "rose water",
+            "bubbling water"
+        ]
+    },
+    {
+        "name": "tea",
+        "minor_value_factor": 1.1,
+        "minor_value_details":[
+            "barley tea",
+            "sage tea"
+        ],
+        "avg_value_factor": 1.2,
+        "avg_value_details":[
+            "lemon tea",
+            "mint tea",
+            "peppermint tea",
+            "rosemary tea",
+            "chamomile tea"
+        ],
+        "major_value_factor": 1.3,
+        "major_value_details":[
+            "lavendar tea",
+            "rose tea",
+            "frankincense tea"
+        ]
+    },
+    {
+        "name": "wine",
+        "minor_value_factor": 1.2,
+        "minor_value_details":[
+            "barley wine",
+            "rice wine"
+        ],
+        "avg_value_factor": 1.4,
+        "avg_value_details":[
+            "spiced wine",
+            "mulled wine"
+        ],
+        "major_value_factor": 1.6,
+        "major_value_details":[
+            "red wine",
+            "gold wine",
+            "white wine",
+            "rose wine"
+        ]
+    },
+    {
+        "name": "mead",
+        "minor_value_factor": 1.1,
+        "minor_value_details":[
+            "short mead",
+            "sack mead"
+        ],
+        "avg_value_factor": 1.2,
+        "avg_value_details":[
+            "mulled mead"
+        ],
+        "major_value_factor": 1.3,
+        "major_value_details":[
+            "great mead",
+            "red mead",
+            "blue mead",
+            "black mead",
+            "white mead"
+        ]
+    },
+    {
+        "name": "milk",
+        "minor_value_factor": 1,
+        "minor_value_details":[
+            "goat milk"
+        ],
+        "avg_value_factor": 1.1,
+        "avg_value_details":[
+            "milk"
+        ],
+        "major_value_factor": 1.2,
+        "major_value_details":[
+            "buffalo milk",
+            "bison milk",
+            "sheep milk"
+        ]
+    },
+    {
+        "name": "ale",
+        "minor_value_factor": 1.1,
+        "minor_value_details":[
+            "weak ale",
+            "small-ale",
+            "mild ale"
+        ],
+        "avg_value_factor": 1.2,
+        "avg_value_details":[
+            "ordinary ale",
+            "small-ale",
+            "spiced ale"
+        ],
+        "major_value_factor": 1.3,
+        "major_value_details":[
+            "strong ale"
+        ]
+    },
+    {
+        "name": "beer",
+        "minor_value_factor": 1.1,
+        "minor_value_details":[
+            "weak beer"
+        ],
+        "avg_value_factor": 1.2,
+        "avg_value_details":[
+            "small beer",
+            "table beer",
+            "small-ale"
+        ],
+        "major_value_factor": 1.3,
+        "major_value_details":[
+            "strong beer"
+        ]
+    },
+    {
+        "name": "cider",
+        "avg_value_factor": 1.1,
+        "avg_value_details":[
+            "apple cider",
+            "applewine"
+        ],
+        "major_value_factor": 1.2,
+        "major_value_details":[
+            "ice cider",
+            "white cider",
+            "black cider"
+        ]
+    },
+    {
+        "name": "beast",
+        "minor_value_factor": 1,
+        "minor_value_details":[
+            "badger",
+            "goat",
+            "mule",
+            "rat",
+            "weasel"
+        ],
+        "avg_value_factor": 1.2,
+        "avg_value_details":[
+            "ape",
+            "baboon",
+            "bear",
+            "boar",
+            "camel",
+            "crab",
+            "crocodile",
+            "deer",
+            "eagle",
+            "elephant",
+            "frog",
+            "hawk",
+            "horse",
+            "hyena",
+            "jackal",
+            "lizard",
+            "mastiff",
+            "octopus",
+            "owl",
+            "polar bear",
+            "pony",
+            "raven",
+            "rhino",
+            "seahorse",
+            "shark",
+            "snake",
+            "toad",
+            "vulture",
+            "warhorse",
+            "wasp",
+            "weasel",
+            "whale"
+        ],
+        "major_value_factor": 1.4,
+        "major_value_details":[
+            "bat",
+            "cat",
+            "elk",
+            "killer whale",
+            "lion",
+            "mammoth",
+            "panther",
+            "sabretoothed tiger",
+            "scorpion",
+            "spider",
+            "tiger",
+            "dire wolf",
+            "wolf"
+        ]
+    },
+    {
+        "name": "monstrosity",
+        "minor_value_factor": 1.25,
+        "minor_value_details":[
+            "death dog",
+            "cockatrice",
+            "harpy",
+            "owlbear",
+            "roc",
+            "worg"
+        ],
+        "avg_value_factor": 1.5,
+        "avg_value_details":[
+            "bulette",
+            "centaur",
+            "chimera",
+            "drider",
+            "ettercap",
+            "hippogriff",
+            "hydra",
+            "manticore",
+            "merrow",
+            "minotaur",
+            "naga",
+            "phase spider",
+            "rust monster"
+        ],
+        "major_value_factor": 1.75,
+        "major_value_details":[
+            "androsphinx",
+            "basilisk",
+            "gorgon",
+            "griffon",
+            "gynosphinx",
+            "kraken",
+            "medusa"
+        ]
+    },
+    {
+        "name": "gemstone",
+        "minor_value_factor": 1.5,
+        "minor_value_details":[
+            "amber",
+            "bloodstone",
+            "jet",
+            "moonstone",
+            "obsidian",
+            "onyx",
+            "sunstone",
+            "zircon"
+        ],
+        "avg_value_factor": 1.75,
+        "avg_value_details":[
+            "agate",
+            "alexandrite",
+            "amazonite",
+            "azurite",
+            "citrine",
+            "garnets",
+            "jade",
+            "lapis lazuli",
+            "malachite",
+            "opalite",
+            "pearl",
+            "peridot",
+            "quartz",
+            "rose quartz",
+            "serpentine",
+            "tiger eye",
+            "topazes",
+            "tourmaline",
+            "turquois"
+        ],
+        "major_value_factor": 2,
+        "major_value_details":[
+            "amethyst",
+            "aquamarine",
+            "diamond",
+            "emerald",
+            "ruby",
+            "sapphire"
+        ]
+    },
+    {
+        "name": "language",
+        "minor_value_factor": 1,
+        "minor_value_details":[
+            "undecipherable",
+            "unintelligible",
+            "illegible"
+        ],
+        "avg_value_factor": 1.2,
+        "avg_value_details":[
+            "dwarvish",
+            "elvish",
+            "gnomish",
+            "goblin",
+            "orcish",
+            "undercommon"
+        ],
+        "major_value_factor": 1.5,
+        "major_value_details":[
+            "abyssal",
+            "celestial",
+            "draconic",
+            "infernal",
+            "sylvan"
+        ]
+    },
+    {
+        "name": "inscription",
+        "minor_value_factor": 1,
+        "minor_value_details":[
+            "lettering"
+        ],
+        "avg_value_factor": 1.2,
+        "avg_value_details":[
+            "inscriptions",
+            "engravings"
+        ],
+        "major_value_factor": 1.4,
+        "major_value_details":[
+            "glyphs",
+            "runes"
+        ]
+    },
+    {
+        "name": "humanoid",
+        "avg_value_factor": 1.2,
+        "avg_value_details":[
+            "dragonborn",
+            "dwarf",
+            "elf",
+            "gnome",
+            "goblin",
+            "halfling",
+            "half-orc",
+            "hobgoblin",
+            "human",
+            "kenku",
+            "kobold",
+            "orc",
+            "tabaxi",
+            "tiefling",
+            "yuan-ti"
+        ],
+        "major_value_factor": 1.4,
+        "major_value_details":[
+            "aarakocra",
+            "firbolg",
+            "goliath",
+            "lizardfolk",
+            "minotaur",
+            "tortle",
+            "triton",
+            "warforged"
+        ]
+    },
+    {
+        "name": "ornament",
+        "avg_value_factor": 1.3,
+        "avg_value_details":[
+            "ornament",
+            "pendant",
+            "adornment",
+            "bauble",
+            "locket",
+            "amulet",
+            "cross",
+            "attachment"
+        ]
+    },
+    {
+        "name": "figurine",
+        "base_value": 10,
+        "base_weight": 1,
+        "avg_value_factor": 1,
+        "avg_value_details":[
+            "figurine",
+            "figure",
+            "statuette"
+        ],
+        "major_value_factor": 1.2,
+        "major_value_details":[
+            "effigy",
+            "idol"
+        ],
+        "prefix_references":[
+            "precious metal",
+            "base metal",
+            "ivory",
+            "bone",
+            "wood",
+            "gem",
+            "stone"
+        ],
+        "postfix_references":[
+            "beast",
+            "monstrosity",
+            "humanoid"
+        ]
+    }
+]

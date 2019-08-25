@@ -1,0 +1,271 @@
+[
+  {
+    "name": "badverb",
+    "minor_value_factor": 1,
+    "minor_value_details":[
+      "slightly",
+      "lightly",
+      "faintly",
+      "mildly"
+    ],
+    "avg_value_factor": 0.75,
+    "avg_value_details":[
+      "",
+      "noticeably",
+      "moderately",
+      "notably",
+      "somewhat",
+      "fairly"
+    ],
+    "major_value_factor": 0.5,
+    "major_value_details":[
+      "heavily",
+      "severely",
+      "extremely",
+      "harshly",
+      "badly"
+    ]
+  },
+  {
+    "name": "wear",
+    "minor_value_factor": 0.9,
+    "minor_value_details":[
+      "blemished",
+      "used"
+    ],
+    "avg_value_factor": 0.75,
+    "avg_value_details":[
+      "worn",
+      "flawed",
+      "tarnished"
+    ],
+    "major_value_factor": 0.5,
+    "major_value_details":[
+      "damaged",
+      "disfigured"
+    ],
+    "prefix_references":[
+      "badverb"
+    ]
+  },
+  {
+    "name": "organic",
+    "minor_value_factor": 0.9,
+    "minor_value_details":[
+      "scratched",
+      "scraped",
+      "scarred"
+    ],
+    "avg_value_factor": 0.75,
+    "avg_value_details":[
+      "water damaged"
+    ],
+    "major_value_factor": 0.5,
+    "major_value_details":[
+      "charred",
+      "singed",
+      "burnt",
+      "rotting",
+      "decaying"
+    ],
+    "prefix_references":[
+      "badverb"
+    ]
+  },
+  {
+    "name": "textile",
+    "minor_value_factor": 0.9,
+    "minor_value_details":[
+      "ripped",
+      "torn"
+    ],
+    "avg_value_factor": 0.75,
+    "avg_value_details":[
+      "stained",
+      "dirty",
+      "discolored"
+    ],
+    "major_value_factor": 0.5,
+    "major_value_details":[
+      "soiled"
+    ],
+    "prefix_references":[
+      "badverb"
+    ]
+  },
+  {
+    "name": "metal",
+    "minor_value_factor": 0.9,
+    "minor_value_details":[
+      "scratched",
+      "dented"
+    ],
+    "avg_value_factor": 0.75,
+    "avg_value_details":[
+      "rusted",
+      "oxidized",
+      "galvanized",
+      "mollified"
+    ],
+    "major_value_factor": 0.5,
+    "major_value_details":[
+      "corroded",
+      "melted"
+    ],
+    "prefix_references":[
+      "badverb"
+    ]
+  },
+  {
+    "name": "ceramic",
+    "minor_value_factor": 0.9,
+    "minor_value_details":[
+      "fractured",
+      "chipped"
+    ],
+    "avg_value_factor": 0.75,
+    "avg_value_details":[
+      "pitted",
+      "cracked"
+    ],
+    "major_value_factor": 0.5,
+    "major_value_details":[
+      "corroded",
+      "broken"
+    ],
+    "prefix_references":[
+      "badverb"
+    ]
+  },
+  {
+    "name": "composite",
+    "minor_value_factor": 0.9,
+    "minor_value_details":[
+      "scoured"
+    ],
+    "avg_value_factor": 0.75,
+    "avg_value_details":[
+      "eroded",
+      "abraded"
+    ],
+    "major_value_factor": 0.5,
+    "major_value_details":[
+      "deteriorated",
+      "crumbling"
+    ],
+    "prefix_references":[
+      "badverb"
+    ]
+  },
+  {
+    "name": "clean",
+    "avg_value_factor": 1.25,
+    "avg_value_details":[
+      "clean",
+      "unsullied",
+      "unblemished"
+    ],
+    "major_value_factor": 1.5,
+    "major_value_details":[
+      "immaculate",
+      "spotless",
+      "gleaming",
+      "glistening"
+    ]
+  },
+  {
+    "name": "radverb",
+    "minor_value_factor": 1,
+    "minor_value_details":[
+      "haphazardly",
+      "carelessly",
+      "sloppily"
+    ],
+    "avg_value_factor": 1.25,
+    "avg_value_details":[
+      "",
+      "properly",
+      "well",
+      "carefully",
+      "thoroughly",
+      "delicately"
+    ],
+    "major_value_factor": 1.5,
+    "major_value_details":[
+      "flawlessly",
+      "extremely well",
+      "exceedingly well",
+      "exquisitely",
+      "meticulously"
+    ]
+  },
+  {
+    "name": "polish",
+    "avg_value_factor": 1.5,
+    "avg_value_details":[
+      "polished",
+      "burnished",
+      "buffed",
+      "finished",
+      "glossed",
+      "furbished"
+    ],
+    "major_value_factor": 1.75,
+    "major_value_details":[
+      "shined",
+      "lustered"
+    ],
+    "prefix_references":[
+      "radverb"
+    ]
+  },
+  {
+    "name": "varnish",
+    "avg_value_factor": 1.5,
+    "avg_value_details":[
+      "glossed",
+      "glazed",
+      "waxed",
+      "oiled"
+    ],
+    "major_value_factor": 1.75,
+    "major_value_details":[
+      "varnished",
+      "lacquered",
+      "enameled",
+      "gilded",
+      "embellished"
+    ],
+    "prefix_references":[
+      "radverb"
+    ]
+  },
+  {
+    "name": "condition",
+    "avg_value_factor": 1.5,
+    "avg_value_details":[
+      "oiled",
+      "conditioned",
+      "waxed",
+      "polished",
+      "waterproofed"
+    ],
+    "prefix_references":[
+      "radverb"
+    ]
+  },
+  {
+    "name": "resting",
+    "minor_value_factor": 1.1,
+    "minor_value_details":[
+      "sleeping",
+      "napping",
+      "slumbering",
+      "dozing",
+      "snoozing",
+      "resting",
+      "lounging",
+      "relaxing"
+    ]
+  }
+]
