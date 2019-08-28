@@ -13,6 +13,7 @@ type ItemBuilder interface {
 	SetRecipes([]*Recipe)
 	SetAttributes([]*Attribute)
 	SetAtrributeGroups([]*AttributeGroup)
+	LinkResources() error
 	Item() (*Item, error)
 }
 
@@ -22,3 +23,6 @@ type MundaneBuilder struct {
 	AttributeGroups map[string]*AttributeGroup
 }
 
+func (mb *MundaneBuilder) SetRecipes([]*Recipe) {
+
+}
