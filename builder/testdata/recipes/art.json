@@ -11,7 +11,7 @@
           {
             "name": "material",
             "required": true,
-            "type_refs": [
+            "attribute_names": [
               "base metal",
               "precious metal",
               "ivory",
@@ -24,10 +24,10 @@
           {
             "name": "shape",
             "required": false,
-            "type_refs": [
+            "attribute_names": [
               "geometric"
             ],
-            "type_group_refs": []
+            "attribute_group_names": []
           }
         ]
       },
@@ -38,7 +38,7 @@
           {
             "name": "material",
             "required": true,
-            "type_refs": [
+            "attribute_names": [
               "base metal",
               "precious metal",
               "ivory",
@@ -47,15 +47,15 @@
               "gem",
               "stone"
             ],
-            "type_group_refs": []
+            "attribute_group_names": []
           },
           {
             "name": "shape",
             "required": true,
-            "type_refs": [
+            "attribute_names": [
               "geometric3"
             ],
-            "type_group_refs": [
+            "attribute_group_names": [
               "object"
             ]
           }
