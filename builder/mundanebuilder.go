@@ -1,15 +1,77 @@
 package builder
 
-import "github.com/pkg/errors"
+import (
+	"github.com/Henry-Sarabia/blank"
+	"github.com/pkg/errors"
+)
+
+var (
+	ErrSetterEmpty = errors.New("setters require a slice with at least 1 element")
+	ErrNameBlank   = errors.New("setters require struct with valid 'Name' field")
+)
 
 type MundaneBuilder struct {
-	Recipes    map[string]*Recipe
-	Attributes map[string]*Attribute
-	Groups     map[string]*AttributeGroup
+	Recipes    map[string]Recipe
+	Attributes map[string]Attribute
+	Groups     map[string]AttributeGroup
 }
 
-//TODO: Check to make sure the removal of slice of pointer data members didn't break linking code.
+// SetRecipes
+func (mb *MundaneBuilder) SetRecipes(rec []Recipe) error {
+	if len(rec) <= 0 {
+		return ErrSetterEmpty
+	}
+
+	// TODO: Either implement duplicate checking or somehow allow duplicates. Latter is better.
+	for _, v := range rec {
+		if blank.Is(v.Name) {
+			return ErrNameBlank
+		}
+
+		mb.Recipes[v.Name] = v
+	}
+
+	return nil
+}
+
+func (mb *MundaneBuilder) SetAttributes(attr []Attribute) error {
+	if len(attr) <= 0 {
+		return ErrSetterEmpty
+	}
+
+	for _, v := range attr {
+		if blank.Is(v.Name) {
+			return ErrNameBlank
+		}
+
+		mb.Attributes[v.Name] = v
+	}
+
+	return nil
+}
+
+func (mb *MundaneBuilder) SetAtrributeGroups(grp []AttributeGroup) error {
+	if len(grp) <= 0 {
+		return ErrSetterEmpty
+	}
+
+	for _, v := range grp {
+		if blank.Is(v.Name) {
+			return ErrNameBlank
+		}
+
+		mb.Groups[v.Name] = v
+	}
+
+	return nil
+}
+
+func (mb *MundaneBuilder) Item() (*Item, error) {
+	panic("implement me")
+}
+
 func (mb *MundaneBuilder) LinkResources() error {
+	//TODO: Check to make sure the removal of slice of pointer data members didn't break linking code.
 	if err := mb.linkGroups(); err != nil {
 		return errors.Wrap(err, "cannot link groups") //TODO: Elaborate on error message
 	}
@@ -24,14 +86,14 @@ func (mb *MundaneBuilder) LinkResources() error {
 // linkGroups iterates through every AttributeGroup's AttributeNames and adds
 //the corresponding Attribute addresses to the AttributeGroup's Attributes slice.
 func (mb *MundaneBuilder) linkGroups() error {
-	for _, g := range mb.Groups {
-		for _, name := range g.AttributeNames {
+	for _, grp := range mb.Groups {
+		for _, name := range grp.AttributeNames {
 			attr, ok := mb.Attributes[name]
 			if !ok {
-				return errors.Errorf("cannot find Attribute '%s' from AttributeGroup '%s' in builder's loaded Attributes", name, g.Name)
+				return errors.Errorf("cannot find Attribute '%s' from AttributeGroup '%s' in builder's loaded Attributes", name, grp.Name)
 			}
 
-			g.Attributes = append(g.Attributes, attr)
+			grp.Attributes = append(grp.Attributes, &attr)
 		}
 	}
 	return nil
@@ -49,16 +111,16 @@ func (mb *MundaneBuilder) linkRecipes() error {
 						return errors.Errorf("cannot find Attribute '%s' from Recipe '%s' in builder's loaded Attributes", name, rec.Name)
 					}
 
-					prop.Attributes = append(prop.Attributes, attr)
+					prop.Attributes = append(prop.Attributes, &attr)
 				}
 
 				for _, name := range prop.AttributeGroupNames {
-					g, ok := mb.Groups[name]
+					grp, ok := mb.Groups[name]
 					if !ok {
 						return errors.Errorf("cannot find AttributeGroup '%s' from Recipe '%s' in builder's loaded AttributeGroups", name, rec.Name)
 					}
 
-					prop.AttributeGroups = append(prop.AttributeGroups, g)
+					prop.AttributeGroups = append(prop.AttributeGroups, &grp)
 				}
 			}
 		}
