@@ -1,9 +1,9 @@
 package builder
 
 type Builder interface {
-	SetRecipes([]*Recipe)
-	SetAttributes([]*Attribute)
-	SetAtrributeGroups([]*AttributeGroup)
+	SetRecipes([]Recipe)
+	SetAttributes([]Attribute)
+	SetAtrributeGroups([]AttributeGroup)
 	LinkResources() error
 	Item() (*Item, error)
 }

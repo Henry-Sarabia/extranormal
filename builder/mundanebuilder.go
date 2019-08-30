@@ -8,6 +8,7 @@ type MundaneBuilder struct {
 	Groups     map[string]*AttributeGroup
 }
 
+//TODO: Check to make sure the removal of slice of pointer data members didn't break linking code.
 func (mb *MundaneBuilder) LinkResources() error {
 	if err := mb.linkGroups(); err != nil {
 		return errors.Wrap(err, "cannot link groups") //TODO: Elaborate on error message

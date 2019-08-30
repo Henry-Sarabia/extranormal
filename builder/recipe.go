@@ -10,7 +10,7 @@ type Recipe struct {
 	Name       string       `json:"name"`
 	BaseValue  float64      `json:"base_value"`
 	BaseWeight float64      `json:"base_weight"`
-	Comps      []*Component `json:"components"`
+	Comps      []Component `json:"components"`
 }
 
 func readRecipes(r ...io.Reader) ([]Recipe, error) {
