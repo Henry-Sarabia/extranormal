@@ -13,7 +13,8 @@ type Recipe struct {
 	Comps      []Component `json:"components"`
 }
 
-func readRecipes(r ...io.Reader) ([]Recipe, error) {
+// ReadRecipes reads the JSON-encoded Recipes from the provided Readers.
+func ReadRecipes(r ...io.Reader) ([]Recipe, error) {
 	if len(r) <= 0 {
 		return nil, errors.New("cannot read Recipes without at least one io.Reader")
 	}
@@ -32,6 +33,7 @@ func readRecipes(r ...io.Reader) ([]Recipe, error) {
 	return rec, nil
 }
 
+// ReadRecipe reads the JSON-encoded Recipes from the provided Reader.
 func readRecipe(r io.Reader) ([]Recipe, error) {
 	var rec []Recipe
 

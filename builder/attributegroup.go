@@ -12,7 +12,9 @@ type AttributeGroup struct {
 	Attributes     []*Attribute
 }
 
-func readAttributeGroups(r ...io.Reader) ([]AttributeGroup, error) {
+// ReadAttributeGroups reads the JSON-encoded AttributeGroups from the provided
+// Readers.
+func ReadAttributeGroups(r ...io.Reader) ([]AttributeGroup, error) {
 	if len(r) <= 0 {
 		return nil, errors.New("cannot read AttributeGroups without at least one io.Reader")
 	}
@@ -31,6 +33,8 @@ func readAttributeGroups(r ...io.Reader) ([]AttributeGroup, error) {
 	return attr, nil
 }
 
+// readAttributeGroup reads the JSON-encoded AttributeGroups from the provided
+// Reader.
 func readAttributeGroup (r io.Reader) ([]AttributeGroup, error) {
 	var attr []AttributeGroup
 
