@@ -18,26 +18,6 @@ type Attribute struct {
 	Prefixes           []string `json:"prefix_references"`
 }
 
-// ReadAttributes reads the JSON-encoded Attributes from the provided Readers.
-func ReadAttributes(r ...io.Reader) ([]Attribute, error) {
-	if len(r) <= 0 {
-		return nil, errors.New("cannot read Attributes without at least one io.Reader")
-	}
-
-	var attr []Attribute
-
-	for i, v := range r {
-		temp, err := readAttribute(v)
-		if err != nil {
-			return nil, errors.Wrapf(err, "cannot decode Attributes from io.Reader at index %d", i)
-		}
-
-		attr = append(attr, temp...)
-	}
-
-	return attr, nil
-}
-
 // readAttribute reads the JSON-encoded Attributes from the provided Reader.
 func readAttribute (r io.Reader) ([]Attribute, error) {
 	var attr []Attribute

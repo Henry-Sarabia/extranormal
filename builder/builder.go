@@ -1,9 +1,11 @@
 package builder
 
+import "io"
+
 type Builder interface {
-	SetRecipes([]Recipe) error
-	SetAttributes([]Attribute) error
-	SetAtrributeGroups([]AttributeGroup) error
+	SetRecipes(io.Reader) error
+	SetAttributes(io.Reader) error
+	SetAttributeGroups(io.Reader) error
 	LinkResources() error
 	Item() (*Item, error)
 }

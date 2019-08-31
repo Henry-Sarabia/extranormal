@@ -3,6 +3,7 @@ package builder
 import (
 	"github.com/Henry-Sarabia/blank"
 	"github.com/pkg/errors"
+	"io"
 )
 
 var (
@@ -10,14 +11,31 @@ var (
 	ErrNameBlank   = errors.New("setters require struct with valid 'Name' field")
 )
 
+// MundaneBuilder implements the Builder interface. MundaneBuilder randomly
+// generates mundane Items from the provided resources.
 type MundaneBuilder struct {
 	Recipes    map[string]Recipe
 	Attributes map[string]Attribute
 	Groups     map[string]AttributeGroup
 }
 
-// SetRecipes
-func (mb *MundaneBuilder) SetRecipes(rec []Recipe) error {
+// SetRecipes reads the JSON-encoded Recipes from the provided Reader and
+// adds them to the receiver's Recipe map.
+func (mb *MundaneBuilder) SetRecipes(r io.Reader) error {
+	rec, err := readRecipe(r)
+	if err != nil {
+		return errors.Wrap(err, "cannot read Recipes")
+	}
+
+	if err := mb.setRecipes(rec); err != nil {
+		return errors.Wrap(err, "cannot set Recipes")
+	}
+
+	return nil
+}
+
+// setRecipes adds the provided Recipes to the receiver's Recipe map.
+func (mb *MundaneBuilder) setRecipes(rec []Recipe) error {
 	if len(rec) <= 0 {
 		return ErrSetterEmpty
 	}
@@ -34,7 +52,23 @@ func (mb *MundaneBuilder) SetRecipes(rec []Recipe) error {
 	return nil
 }
 
-func (mb *MundaneBuilder) SetAttributes(attr []Attribute) error {
+// SetAttributes reads the JSON-encoded Attributes from the provided Reader and
+// adds them to the receiver's Attribute map.
+func (mb *MundaneBuilder) SetAttributes(r io.Reader) error {
+	attr, err := readAttribute(r)
+	if err != nil {
+		return errors.Wrap(err, "cannot read Attributes")
+	}
+
+	if err := mb.setAttributes(attr); err != nil {
+		return errors.Wrap(err, "cannot set Attributes")
+	}
+
+	return nil
+}
+
+// setAttributes adds the provided Attributes to the receiver's Attribute map.
+func (mb *MundaneBuilder) setAttributes(attr []Attribute) error {
 	if len(attr) <= 0 {
 		return ErrSetterEmpty
 	}
@@ -50,7 +84,24 @@ func (mb *MundaneBuilder) SetAttributes(attr []Attribute) error {
 	return nil
 }
 
-func (mb *MundaneBuilder) SetAtrributeGroups(grp []AttributeGroup) error {
+// SetAttributeGroups reads the JSON-encoded AttributeGroups from the provided
+// Reader and adds them to the receiver's AttributeGroup map.
+func (mb *MundaneBuilder) SetAttributeGroups(r io.Reader) error {
+	grp, err := readAttributeGroup(r)
+	if err != nil {
+		return errors.Wrap(err, "cannot read AttributeGroups")
+	}
+
+	if err := mb.setAttributeGroups(grp); err != nil {
+		return errors.Wrap(err, "cannot set AttributeGroups")
+	}
+
+	return nil
+}
+
+// setAttributeGroups adds the provided AttributeGroups to the receiver's
+// AttributeGroup map.
+func (mb *MundaneBuilder) setAttributeGroups(grp []AttributeGroup) error {
 	if len(grp) <= 0 {
 		return ErrSetterEmpty
 	}
@@ -66,10 +117,9 @@ func (mb *MundaneBuilder) SetAtrributeGroups(grp []AttributeGroup) error {
 	return nil
 }
 
-func (mb *MundaneBuilder) Item() (*Item, error) {
-	panic("implement me")
-}
-
+// LinkResources iterates through all of the receiver's maps and links each
+// object's list of AttributeNames and AttributeGroupNames to their respective
+// Attributes and AttributeGroups.
 func (mb *MundaneBuilder) LinkResources() error {
 	//TODO: Check to make sure the removal of slice of pointer data members didn't break linking code.
 	if err := mb.linkGroups(); err != nil {
@@ -84,7 +134,7 @@ func (mb *MundaneBuilder) LinkResources() error {
 }
 
 // linkGroups iterates through every AttributeGroup's AttributeNames and adds
-//the corresponding Attribute addresses to the AttributeGroup's Attributes slice.
+// the corresponding Attribute addresses to the AttributeGroup's Attributes slice.
 func (mb *MundaneBuilder) linkGroups() error {
 	for _, grp := range mb.Groups {
 		for _, name := range grp.AttributeNames {
@@ -126,4 +176,8 @@ func (mb *MundaneBuilder) linkRecipes() error {
 		}
 	}
 	return nil
+}
+
+func (mb *MundaneBuilder) Item() (*Item, error) {
+	panic("implement me")
 }
