@@ -8,3 +8,18 @@ type Property struct {
 	Attributes          []*Attribute
 	AttributeGroups     []*AttributeGroup
 }
+
+func (p *Property) Reduce() []Attribute {
+	var attrs []Attribute
+	for _, a := range p.Attributes {
+		attrs = append(attrs, *a)
+	}
+
+	for _, grp := range p.AttributeGroups {
+		for _, a := range grp.Attributes {
+			attrs = append(attrs, *a)
+		}
+	}
+
+	return attrs
+}

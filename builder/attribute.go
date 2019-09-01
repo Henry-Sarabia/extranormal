@@ -4,22 +4,62 @@ import (
 	"encoding/json"
 	"github.com/pkg/errors"
 	"io"
+	"log"
+	"math/rand"
 )
 
 type Attribute struct {
-	Name               string   `json:"name"`
-	WeightFactor       factor   `json:"weight_factor"`
-	MinorValueFactor   factor   `json:"minor_value_factor"`
-	MinorValueVariants []string `json:"minor_value_variants"`
-	AvgValueFactor     factor   `json:"avg_value_factor"`
-	AvgValueVariants   []string `json:"avg_value_variants"`
-	MajorValueFactor   factor   `json:"major_value_factor"`
-	MajorValueVariants []string `json:"major_value_variants"`
-	Prefixes           []string `json:"prefix_references"`
+	Name         string       `json:"name"`
+	Common       VariantBlock `json:"minor"`
+	Uncommon     VariantBlock `json:"average"`
+	Rare         VariantBlock `json:"major"`
+	WeightFactor factor       `json:"weight_factor"`
+	Prefixes     []string     `json:"prefix_references"`
+}
+
+type VariantBlock struct {
+	ValueFactor factor   `json:"value_factor"`
+	Variants    []string `json:"variants"`
+}
+
+type Variant struct {
+	Name         string
+	ValueFactor  factor
+	WeightFactor factor
+}
+
+func (vb *VariantBlock) Reduce() Variant {
+	r := rand.Intn(len(vb.Variants))
+
+	return Variant{
+		Name:        vb.Variants[r],
+		ValueFactor: vb.ValueFactor,
+	}
+}
+
+func (a *Attribute) Reduce() Variant {
+	c, u, r := len(a.Common.Variants), len(a.Uncommon.Variants), len(a.Rare.Variants)
+	i := rand.Intn(c + u + r)
+
+	var v Variant
+
+	switch {
+	case i < c:
+		v = a.Common.Reduce()
+	case i < c+u:
+		v = a.Uncommon.Reduce()
+	case i < c+u+r:
+		v = a.Rare.Reduce()
+	default:
+		log.Fatal("Attribute.Reduce should never reach this") //TODO: Handle this case properly
+	}
+
+	v.WeightFactor = a.WeightFactor
+	return v
 }
 
 // readAttribute reads the JSON-encoded Attributes from the provided Reader.
-func readAttribute (r io.Reader) ([]Attribute, error) {
+func readAttribute(r io.Reader) ([]Attribute, error) {
 	var attr []Attribute
 
 	if err := json.NewDecoder(r).Decode(&attr); err != nil {

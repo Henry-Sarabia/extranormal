@@ -179,5 +179,5 @@ func (mb *MundaneBuilder) linkRecipes() error {
 }
 
 func (mb *MundaneBuilder) Item() (*Item, error) {
-	panic("implement me")
+
 }
