@@ -26,6 +26,11 @@ func (r *Recipe) Reduce() []Component {
 		comps = append(comps, c)
 	}
 
+	if len(comps) <= 0 {
+		i := rand.Intn(len(r.Comps))
+		comps = append(comps, r.Comps[i])
+	}
+
 	return comps
 }
 

@@ -20,5 +20,10 @@ func (c *Component) Reduce() []Property {
 		props = append(props, p)
 	}
 
+	if len(props) <= 0 {
+		i := rand.Intn(len(c.Properties))
+		props = append(props, c.Properties[i])
+	}
+
 	return props
 }

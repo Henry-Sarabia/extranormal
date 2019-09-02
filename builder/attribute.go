@@ -10,9 +10,9 @@ import (
 
 type Attribute struct {
 	Name         string       `json:"name"`
-	Common       VariantBlock `json:"minor"`
-	Uncommon     VariantBlock `json:"average"`
-	Rare         VariantBlock `json:"major"`
+	Common       VariantBlock `json:"common"`
+	Uncommon     VariantBlock `json:"uncommon"`
+	Rare         VariantBlock `json:"rare"`
 	WeightFactor factor       `json:"weight_factor"`
 	Prefixes     []string     `json:"prefix_references"`
 }
