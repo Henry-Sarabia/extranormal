@@ -17,26 +17,6 @@ type Attribute struct {
 	Prefixes     []string     `json:"prefix_references"`
 }
 
-type VariantBlock struct {
-	ValueFactor factor   `json:"value_factor"`
-	Variants    []string `json:"variants"`
-}
-
-type Variant struct {
-	Name         string
-	ValueFactor  factor
-	WeightFactor factor
-}
-
-func (vb *VariantBlock) Reduce() Variant {
-	r := rand.Intn(len(vb.Variants))
-
-	return Variant{
-		Name:        vb.Variants[r],
-		ValueFactor: vb.ValueFactor,
-	}
-}
-
 func (a *Attribute) Reduce() Variant {
 	c, u, r := len(a.Common.Variants), len(a.Uncommon.Variants), len(a.Rare.Variants)
 	i := rand.Intn(c + u + r)
